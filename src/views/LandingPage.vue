@@ -1,7 +1,6 @@
 <template>
     <div>
         <NavigationVue />
-
         <v-card width="100%" height="700px"  color="#779ECB">
             <!-- <v-card color="#779ECB" width="30%" flat>
                 <v-img src="./images/image2.jpg" height="700px"></v-img>
@@ -22,7 +21,6 @@
             <v-card color="#779ECB" width="30%" flat>
                 <v-img src="./images/image2.jpg" height="700px"></v-img>
             </v-card> -->
-
             <div class="wrapper">
                 <div class="content">
                     <div class="imageText">
@@ -31,18 +29,13 @@
                             Jeong In Lee.
                         </div>
                         <center>
-                            <v-btn class="learnMoreButton" elevation="3" height="45px">Learn More</v-btn>
+                            <v-btn @click="moveAbout()" class="learnMoreButton" elevation="3" height="45px">Learn More</v-btn>
                         </center>
                     </div>
                 </div>
               </div>
-
-            
-
-
         </v-card>
 
-        
         <center>
             <FooterVue />
         </center>
@@ -69,6 +62,11 @@ export default {
         moveAbout() {
             this.$router.push({
                 path: "about",
+            });
+        },
+        moveContact() {
+            this.$router.push({
+                path: "contact",
             });
         },
         moveHome() {
@@ -100,15 +98,21 @@ export default {
 .imageText {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 38px;
+    font-size: 35px;
     font-weight: bold;
     color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .imageText {
+        font-size: 30px;
+    }
 }
 
 .wrapper {
     display: grid;
     place-items: center;
-    min-height: 75vh;
+    min-height: 70vh;
   }
   
   .content {

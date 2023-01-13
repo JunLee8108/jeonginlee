@@ -7,12 +7,13 @@
                 <v-card-text class="footerText">
                     Copyright 2018. Jeong In Lee All Rights Reserved.
                 </v-card-text>
-
+                
+                <br><br>
                 <v-btn class="name" @click="moveAbout()" text height="40px" color="#808080">
                     <strong>About Me</strong>
                 </v-btn>
 
-                <v-btn class="name" text height="40px" color="#808080">
+                <v-btn class="name" @click="moveContact()" text height="40px" color="#808080">
                     <strong>Contact Us</strong>
                 </v-btn>
 
@@ -44,7 +45,7 @@ export default {
         icons: [
             'mdi-facebook',
             // 'mdi-twitter',
-            // 'mdi-linkedin',
+            'mdi-linkedin',
             'mdi-instagram',
         ],
     }),
@@ -57,11 +58,18 @@ export default {
             else if (e === "mdi-instagram") {
                 window.open("https://www.instagram.com/je0ngin2/?hl=ko", "_blank");
             }
+            else if (e === "mdi-linkedin") {
+                window.open("https://www.linkedin.com/in/jeong-in-lee-94520113b/", "_blank");
+            }
         },
-
         moveAbout() {
             this.$router.push({
                 path: "about",
+            });
+        },
+        moveContact() {
+            this.$router.push({
+                path: "contact",
             });
         },
     }
